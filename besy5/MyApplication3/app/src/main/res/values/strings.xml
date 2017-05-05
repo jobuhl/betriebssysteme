@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CHECK-YOUR-PRIM </string>
+    <string name="value">Anzahl:  </string>
+    <string name="ergebnis">Ergebnis:</string>
+    <string name="button">berechnen</string>
+
+</resources>

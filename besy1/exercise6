@@ -1,0 +1,68 @@
+#!/bin/ksh
+
+h()
+{
+	echo "Hello World!"
+}
+
+
+u()
+{
+	chmod u+x exercise4
+	 ./exercise4
+}
+
+
+c()
+{
+u
+echo -n "checkFile "
+read var1 var2
+chmod u+x exercise4
+./exercise4 $var1 $var2
+
+}
+
+
+
+m()
+{
+	echo "-----------------------------"
+	echo "h		hello world"
+	echo "u		print usage"
+	echo "c		checkFile"
+	echo "m		print menu"
+	echo "x		exit"
+	echo "-----------------------------"
+}
+
+x()
+{
+	 exit 0
+}
+
+	m
+	echo -n "textualMenü> " 	
+while read var 
+do
+case $var in
+
+h)
+h;;
+
+u)		
+u;;
+
+c)
+c;;
+
+m)
+m;;
+
+x)
+x;;
+ 
+esac
+
+echo -n "textualMenü> "
+done

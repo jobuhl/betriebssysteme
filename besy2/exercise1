@@ -1,0 +1,77 @@
+#!/bin/ksh
+#nicht das Home verzeichnis da viel zu groß!
+
+
+var1=$1
+var2=$2
+pfad=/Users/Rackenrotz/Dropbox/ShareBuhl/
+da=$(date "+%Y_%m_%d_%H_%M_%S")
+
+usage()
+{
+	echo ""
+	echo "NAME"
+	echo "		excercise1 -- creat or check a backup file"
+	echo ""
+	echo "-----------------------------------------------------------"
+	echo "Synopsis"
+	echo ""
+	echo "		 exercise1 {-h|--h}	Usage of the programm"
+	echo "		 exercise1 {-v}		verify Backup directory"
+	echo "		 exercise1 {-p}		create Backup in backup directory"
+	echo "-----------------------------------------------------------"
+	echo ""
+	echo "DESCRIPTION"
+	echo "		exercise1 create or check a backup from the
+		ShareBuhl directory. The backup will be stored
+		in the direcotry backup in ShareBuhl"
+	echo""
+	echo""
+}
+
+verifyBackupDirectory()
+{
+cd $pfad
+
+if [ -d backup ]
+	then 
+		echo "Directory Backup exists"
+	else
+	
+	if [ -f backup ]
+  		then
+		    	echo ""	
+          		echo "		Error! file detected "
+			echo ""
+          		exit; 
+		else 
+			echo "No file or directory detected"
+ 	fi
+fi
+echo ""	
+}
+
+processBackup()
+{
+	cd $pfad
+
+	if [ -d backup ]
+		   then
+			cd $pfad/backup/
+               		tar cvzf backup_$da.tgz --exclude backup  $pfad
+	            else
+	               mkdir backup 
+	        	cd $pfad/backup/ 
+  			tar cvzf backup_$da.tgz --exclude backup  $pfad	  
+		fi
+}
+
+case $var1 in
+
+	-h)  usage;;
+	--h) usage;;
+        -v)  verifyBackupDirectory;;
+        -p)  processBackup;;
+	*)   usage;;
+        	
+esac

@@ -1,0 +1,3 @@
+#!/bin/ksh
+
+print Who the hell ist $1

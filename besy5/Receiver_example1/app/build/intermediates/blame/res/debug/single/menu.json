@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Rackenrotz/Desktop/Receiver_example1/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/Rackenrotz/Desktop/Receiver_example1/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/Rackenrotz/Desktop/Receiver_example1/app/build/intermediates/res/merged/debug/menu/second.xml",
+        "source": "/Users/Rackenrotz/Desktop/Receiver_example1/app/src/main/res/menu/second.xml"
+    }
+]

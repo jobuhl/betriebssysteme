@@ -1,0 +1,28 @@
+#!/bin/ksh
+
+case $1 in
+
+-d)
+if [ -d $2 ]
+then
+   echo "Directory '$2' found"
+else
+   echo "'$2' is no directory"
+fi;;
+
+-f)
+if [ -f $2 ]
+then 
+	echo " File '$2' found"
+else
+	echo " '$2' is no regular file"
+fi;;
+
+*)
+	echo "Unknown option '$1'"
+	echo "	Usage:  checkFile -d|-f <name>"
+	echo "	Veriefies the existence of the passed file or directory <name>"
+	echo ""
+	echo "	-d	Veriefies a directory"
+	echo "	-f      Verifies a regular file";;
+esac

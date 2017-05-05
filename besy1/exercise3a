@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+ 
+
+if [ -d $1 ]
+then
+   echo "Directory '$1' found"
+else
+   echo "'$1' is no directory"
+fi
